@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-console.log('MONGODB_URI:', process.env.MONGODB_URI);
+// console.log('MONGODB_URI:', process.env.MONGODB_URI);
 
 
 const app = express();
@@ -22,7 +22,7 @@ app.use('/api/exams', require('./routes/exams'));
 app.use('/api/pdf', require('./routes/pdf'));
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/examwise', {
+mongoose.connect('mongodb+srv://nirbhayhiwse37:bd7YL8azCvy0f9Q0@setwise.ulbf1.mongodb.net/?retryWrites=true&w=majority&appName=setwise' || 'mongodb://localhost:27017/examwise', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
